@@ -482,3 +482,4 @@ For issues, questions, or suggestions:
 
 Last Updated: January 2026
 # naql-app
+# naql-app-front
