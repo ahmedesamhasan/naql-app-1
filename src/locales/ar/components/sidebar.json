@@ -1,0 +1,14 @@
+{
+  "dashboard": "الرئيسية",
+  "profile": "ملف الادمن",
+  "users": "المستخدمين",
+  "drivers": "السائقون",
+  "vehicles": "المركبات",
+  "trips": "الرحلات",
+  "vehicleTypes": "أنواع المركبات",
+  "coupons": "الكوبونات",
+  "ads": "الإعلانات",
+  "complaints": "الشكاوى",
+  "notifications": "الإشعارات",
+  "logout": "تسجيل الخروج"
+}

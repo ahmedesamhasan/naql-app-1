@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="emotion-insertion-point" content="" />
+
+  <!-- DizieL Branding Metadata -->
+  <title>DizieL Admin Dashboard</title>
+  <meta name="description" content="DizieL - Professional Admin Dashboard for Ride Sharing Platform Management" />
+  <meta name="keywords" content="DizieL, Ride Sharing, Admin Dashboard, Transportation" />
+  <meta name="theme-color" content="#003366" />
+
+  <!-- Favicon - DizieL Logo -->
+  <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+  <link rel="shortcut icon" href="/images/logo.svg" />
+  <link rel="apple-touch-icon" href="/images/logo.svg" />
+
+  <!-- Preconnect for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Loading Styles - DizieL Branding -->
+  <style>
+    body {
+      margin: 0;
+      /* DizieL Brand Primary Color - Professional Dark Blue */
+      background-color: #003366;
+      font-family: "Cairo", sans-serif;
+    }
+
+    .loading_container {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      width: 100vw;
+      height: 100vh;
+      gap: 24px;
+      align-content: center;
+    }
+
+    .loading_container svg:first-child {
+      width: auto;
+      height: 75px;
+      display: flex;
+    }
+
+    .loading_container .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading_container .loader svg {
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      /* DizieL Brand Accent Color - Orange */
+      stroke: #FFA500;
+      stroke-width: 2;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!-- End Loading Styles -->
+
+  <!-- Cairo Font - Preload critical fonts for better performance -->
+  <link rel="preload" href="/fonts/Cairo-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href="/fonts/Cairo-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href="/fonts/Cairo-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href="/fonts/Cairo-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <!-- End Cairo Font Preload -->
+
+  <!-- CSS - Preload and async load -->
+
+  <link rel="preload" href="/src/assets/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="/src/assets/index.css" />
+  </noscript>
+</head>
+
+<body>
+  <div id="root">
+    <div class="loading_container">
+      <!-- DizieL Brand Logo - Loading State -->
+      <div class="DizieL_logo">
+        <svg width="900" height="307" viewBox="0 0 800 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <image href="src/assets/images/leaflet/b2b9632d-a504-4fa3-8754-eb4cc93ee02a.png" x="0" y="0" width="680"
+            height="309" />
+        </svg>
+      </div>
+
+      <!-- Loading Indicator - Animated Spinner -->
+      <div class="loader">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * DizieL Language Detection & Setup
+     * Automatically detects user's language preference from localStorage
+     * Sets HTML lang attribute and RTL/LTR text direction accordingly
+     */
+    (function () {
+      const savedLang = localStorage.getItem("DizieL_lang") || "ar";
+      const html = document.documentElement;
+      html.lang = savedLang;
+      html.dir = savedLang === "ar" ? "rtl" : "ltr";
+
+      // Defer until DOM ready (so .DizieL_logo exists)
+      window.addEventListener("DOMContentLoaded", () => {
+        const logo = document.querySelector(".DizieL_logo");
+        if (!logo) return;
+
+        const arLogo = `
+            <svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="speed-lines" d="M60 40 H280 Q290 40 295 50" stroke="#46B5D1" stroke-width="2" />
+          <g id="letter-d-group">
+              <path id="flame" d="M45 75 Q35 70 45 65 Q55 70 45 75" fill="#46B5D1" />
+              <text x="60" y="100" fill="#343A40" font-family="Arial, sans-serif" font-weight="bold" font-size="60">D</text>
+          </g>
+          <g id="middle-text" fill="#46B5D1" font-family="Arial, sans-serif" font-weight="bold" font-size="50">
+              <text x="110" y="100">i</text>
+              <path d="M112 55 Q118 50 124 55" stroke="#46B5D1" stroke-width="2" fill="none" />
+              <text x="140" y="100">z</text>
+              <text x="175" y="100">i</text>
+              <path d="M177 55 Q183 50 189 55" stroke="#46B5D1" stroke-width="2" fill="none" />
+              <text x="205" y="100">e</text>
+          </g>
+          <g id="truck-and-l">
+              <text x="240" y="100" fill="#46B5D1" font-family="Arial, sans-serif" font-weight="bold" font-size="70">L</text>
+              <path d="M290 60 H330 Q350 60 350 80 V100 H290 Z" fill="none" stroke="#46B5D1" stroke-width="3" />
+              <circle cx="305" cy="110" r="8" fill="#46B5D1" />
+          </g>
+        </svg>
+          `;
+
+        logo.innerHTML = savedLang === "ar" ? arLogo : enLogo;
+        logoContainer.innerHTML = dizielLogoSvg;
+
+      });
+    })();
+  </script>
+
+  <script type="module" src="/src/main.tsx" defer></script>
+</body>
+
+</html>
