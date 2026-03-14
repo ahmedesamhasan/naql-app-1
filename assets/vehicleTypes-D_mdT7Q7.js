@@ -1,0 +1,1 @@
+function m(n,f=[],r=!1){if(!n)return"-";if(typeof n=="object"&&"name"in n)return r?n.name_ar:n.name;const a=typeof n=="string"?parseInt(n,10):n;if(!isNaN(a)){const t=f.find(o=>o.id===a);if(t)return r?t.name_ar:t.name}return"Unknown"}export{m as g};

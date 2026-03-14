@@ -1,0 +1,1 @@
+import{j as t}from"./react-vendor-DmzJhNh2.js";import{A as o}from"./index-D9BVr3jJ.js";import"./vendor-MguDmTIG.js";import"./map-vendor-DAvCNpgt.js";import"./chart-vendor-BBtrr97X.js";import"./mui-vendor-PrC0u4_l.js";import"./network-vendor-kgZyqCRS.js";const n=()=>t.jsx(o,{type:"updatePassword"});export{n as default};
